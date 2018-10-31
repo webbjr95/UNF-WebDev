@@ -64,6 +64,8 @@ namespace UNF_WebDev.Models
 
     public class RegisterViewModel
     {
+        //TODO: Should I add in some of the customer model for this information? Should it just be doubled over
+        //to that table?
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]

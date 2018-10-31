@@ -5,14 +5,14 @@ namespace UNF_WebDev.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<UNF_WebDev.Models.Customers>
+    internal sealed class Configuration : DbMigrationsConfiguration<UNF_WebDev.Models.RoomModelDb>
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(UNF_WebDev.Models.Customers context)
+        protected override void Seed(UNF_WebDev.Models.RoomModelDb context)
         {
             //  This method will be called after migrating to the latest version.
 

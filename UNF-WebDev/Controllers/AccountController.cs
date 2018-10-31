@@ -12,6 +12,8 @@ using UNF_WebDev.Models;
 
 namespace UNF_WebDev.Controllers
 {
+    //TODO: Add in the following
+    // Authorization, account roles, two different links for the tables.
     [Authorize]
     public class AccountController : Controller
     {

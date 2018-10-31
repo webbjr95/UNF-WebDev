@@ -1,0 +1,90 @@
+﻿@model UNF_WebDev.Models.RoomModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>RoomModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.hotelName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hotelName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.city)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.city)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.state)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.state)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.zipCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.zipCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.roomSquareFootage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.roomSquareFootage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.peoplePerRoom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.peoplePerRoom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pricePerNight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pricePerNight)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.checkIn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.checkIn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.checkOut)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.checkOut)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.roomId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

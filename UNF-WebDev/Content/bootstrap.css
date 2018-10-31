@@ -763,6 +763,11 @@ pre code {
   margin-left: auto;
 }
 
+.column-left,
+.column-right {
+    width: 50%;
+}
+
 .container:before,
 .container:after {
   display: table;
@@ -798,11 +803,12 @@ pre code {
   clear: both;
 }
 
-.row:before,
-.row:after {
-  display: table;
-  content: " ";
-}
+    .row:before,
+    .row:after {
+        display: table;
+        content: " ";
+        width: 100%;
+    }
 
 .row:after {
   clear: both;

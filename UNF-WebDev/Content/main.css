@@ -1,0 +1,106 @@
+h1{
+color: #c1dec1;
+font-size: 50px;
+text-align: center;
+font-family: 'Segoe UI';
+background-color: #333;
+padding: 20px;
+color: #c1dec1;
+opacity: .9;
+display:block;
+width: 15%;
+border: solid white;
+}
+ul {
+    list-style-type: none;
+    margin: auto;
+    padding: auto;
+    overflow: hidden;
+    background-color: #333;
+    width:24%; 
+    border: solid white;
+    
+}
+
+li {
+    float: left;
+}
+li a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+
+div.transparent
+{
+position:cover;
+z-index: 1;
+left:0;
+right:0;
+background-color:#333;
+opacity: .6;
+filter: alpha(opacity=60);
+}
+.footer
+{
+    padding: 20px;
+    color: #c1dec1; 
+}
+p
+{
+    width: 40%;
+    opacity: .9;
+    background-color: #333;
+    padding: 20px;
+    color: #c1dec1;
+    border: solid white;
+    
+}
+body {
+    background-image: url("Images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+title
+{
+text-align: center;
+}
+
+h2 a
+{
+color: #c1dec1;
+font-size: 50px;
+text-align: center;
+font-family: 'Segoe UI';
+background-color: #333;
+padding: 20px;
+color: #c1dec1;
+opacity: .9;
+display:block;
+width: 15%;
+border: solid white;
+}
+
+form
+{
+color: #c1dec1;
+font-size: 50px;
+text-align: center;
+font-family: 'Segoe UI';
+background-color: #333;
+padding: 20px;
+color: #c1dec1;
+opacity: .9;
+display:block;
+width: 60%;
+margin-left: auto;
+margin-right: auto;
+border: solid white;
+}
