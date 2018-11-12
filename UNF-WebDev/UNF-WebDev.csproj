@@ -206,7 +206,6 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap.css" />
     <Content Include="Content\Images\background.jpg" />
     <Content Include="Content\main.css" />
     <Content Include="favicon.ico" />

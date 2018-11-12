@@ -3,26 +3,27 @@
 @{
     ViewBag.Title = "Create";
 }
+<link href="@Url.Content("~/Content/main.css")" rel="stylesheet" type="text/css" />
 
-<h2>Create a Hotel Booking</h2>
-
-
+<body>
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
+
+    <p>Search for your dream get-a-way</p>
     
-    <div class="form-horizontal">
+    <div>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
+        <div>
             @Html.Label("Hotel Name: ", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            <div>
                 @Html.EditorFor(model => model.hotelName, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.hotelName, "", new { @class = "text-danger" })
             </div>
         </div>
 
-        <div class="form-group">
+        <div>
             @Html.Label("City: ", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.city, new { htmlAttributes = new { @class = "form-control" } })
@@ -30,7 +31,7 @@
             </div>
         </div>
 
-        <div class="form-group">
+        <div>
             @Html.Label("State: ", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownListFor(model => model.state,
@@ -39,7 +40,7 @@
             </div>
         </div>
 
-        <div class="form-group">
+        <div>
             @Html.Label("Zip Code: ", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.zipCode, new { htmlAttributes = new { @class = "form-control" } })
@@ -47,7 +48,7 @@
             </div>
         </div>
 
-        <div class="form-group">
+        <div>
             @Html.Label("Square Footage: ", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.roomSquareFootage, new { htmlAttributes = new { @class = "form-control" } })
@@ -55,7 +56,7 @@
             </div>
         </div>
 
-        <div class="form-group">
+        <div>
             @Html.Label("People Per Room: ", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.peoplePerRoom, new { htmlAttributes = new { @class = "form-control" } })
@@ -63,7 +64,7 @@
             </div>
         </div>
 
-        <div class="form-group">
+        <div>
             @Html.Label("Price Per Night: ", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.pricePerNight, new { htmlAttributes = new { @class = "form-control" } })
@@ -71,7 +72,7 @@
             </div>
         </div>
 
-        <div class="form-group">
+        <div>
             @Html.Label("Check In Date: ", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.checkIn, new { htmlAttributes = new { @class = "form-control" } })
@@ -79,25 +80,22 @@
             </div>
         </div>
 
-        <div class="form-group">
+        <div>
             @Html.Label("Check Out Date: ", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            <div>
                 <input type="date" name="name" value=@DateTime.Now />
                 @Html.ValidationMessageFor(model => model.checkOut, "", new { @class = "text-danger" })
             </div>
         </div>
 
-        <div class="form-group">
+        <div>
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+    </body>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
