@@ -111,4 +111,9 @@ namespace UNF_WebDev.Models
         [Display(Name = "Email")]
         public string Email { get; set; }
     }
+
+    public enum CustomUserRoles
+    {
+        ADMIN, STANDARD
+    }
 }

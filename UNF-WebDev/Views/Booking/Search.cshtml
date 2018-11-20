@@ -1,0 +1,96 @@
+﻿@model IEnumerable<UNF_WebDev.Models.RoomModel>
+
+@{
+    ViewBag.Title = "Search";
+}
+<p class="blocktext">
+    <b>Welcome to Lucid Hotels, where simplicity is the epitome of complexity. We strive to offer high quality service without the confusion.</b>
+</p>
+
+    <h1>
+        Rooms Available to Make Your Dream Come True
+    </h1>
+    <table style="width:80%; margin-left: auto; margin-right: auto;">
+        <tr>
+            <th>
+                Hotel |
+                <a href="@Url.Action("Search", "Booking", new { sortOrder = "hotel_name_asc" })">
+                    <img src="~/Content/Images/filter ASC.png" />
+                </a> |
+                <a href="@Url.Action("Search", "Booking", new { sortOrder = "hotel_name_desc" })">
+                    <img src="~/Content/Images/filter DESC.png" />
+                </a>
+            </th>
+            <th>
+                City |
+                <a href="@Url.Action("Search", "Booking", new { sortOrder = "city_asc" })">
+                    <img src="~/Content/Images/filter ASC.png" />
+                </a> |
+                <a href="@Url.Action("Search", "Booking", new { sortOrder = "city_desc" })">
+                    <img src="~/Content/Images/filter DESC.png" />
+                </a>
+            </th>
+            <th>
+                State |
+                <a href="@Url.Action("Search", "Booking", new { sortOrder = "state_asc" })">
+                    <img src="~/Content/Images/filter ASC.png" />
+                </a> |
+                <a href="@Url.Action("Search", "Booking", new { sortOrder = "state_desc" })">
+                    <img src="~/Content/Images/filter DESC.png" />
+                </a>
+            </th>
+            <th>
+                Zip Code
+            </th>
+            <th>
+                People |
+                <a href="@Url.Action("Search", "Booking", new { sortOrder = "people_per_room_asc" })">
+                    <img src="~/Content/Images/filter ASC.png" />
+                </a> |
+                <a href="@Url.Action("Search", "Booking", new { sortOrder = "people_per_room_desc" })">
+                    <img src="~/Content/Images/filter DESC.png" />
+                </a>
+            </th>
+            <th>
+                Price |
+                <a href="@Url.Action("Search", "Booking", new { sortOrder = "price_per_night_asc" })">
+                    <img src="~/Content/Images/filter ASC.png" />
+                </a> |
+                <a href="@Url.Action("Search", "Booking", new { sortOrder = "price_per_night_desc" })">
+                    <img src="~/Content/Images/filter DESC.png" />
+                </a>
+            </th>
+            <th>
+                OPTIONS
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.hotelName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.city)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.state)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.zipCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.peoplePerRoom)
+                </td>
+                <td>
+                    $ @Html.DisplayFor(modelItem => item.pricePerNight)
+                </td>
+                <td>
+                    @Html.ActionLink("Book", "Edit", new { id = item.roomId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.roomId })
+                </td>
+            </tr>
+        }
+
+    </table>

@@ -4,93 +4,92 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
+<h2>Delete Hotel Room with ID # @Model.roomId</h2>
 
 <h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>RoomModel</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.hotelName)
-        </dt>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
 
-        <dd>
-            @Html.DisplayFor(model => model.hotelName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.city)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.city)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.state)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.state)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.zipCode)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.zipCode)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.roomSquareFootage)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.roomSquareFootage)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.peoplePerRoom)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.peoplePerRoom)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.pricePerNight)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.pricePerNight)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.checkIn)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.checkIn)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.checkOut)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.checkOut)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.roomId)
+        <div>
+            @Html.Label("Hotel Name: ", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div>
+                @Html.EditorFor(model => model.hotelName, new { htmlAttributes = new { @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.hotelName, "", new { @class = "text-danger" })
+            </div>
         </div>
-    }
-</div>
+
+        <div>
+            @Html.Label("City: ", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.city, new { htmlAttributes = new { @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.city, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div>
+            @Html.Label("State: ", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.state, new { htmlAttributes = new { @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.state, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div>
+            @Html.Label("Zip Code: ", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.zipCode, new { htmlAttributes = new { @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.zipCode, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+    </div>
+
+    <div>
+        @Html.Label("People Per Room: ", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.peoplePerRoom, new { htmlAttributes = new { @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.peoplePerRoom, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div>
+        @Html.Label("Price Per Night: ", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.pricePerNight, new { htmlAttributes = new { @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.pricePerNight, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div>
+        @Html.Label("Check In Date: ", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(model => model.checkIn, new { htmlAttributes = new { @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.checkIn, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div>
+        @Html.Label("Check Out Date: ", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div>
+            @Html.TextBoxFor(model => model.checkOut, new { htmlAttributes = new { @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.checkOut, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.Label("Booking Status: ", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.bookingStatus, new { htmlAttributes = new { @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.bookingStatus, "", new { @class = "text-danger" })
+        </div>
+
+    </div>
+        <div class="form-actions no-color">
+            <input type="submit" value="Remove Room" class="btn btn-default" />
+        </div>
+}

@@ -13,15 +13,14 @@
 
     <ul>
         @* TODO: Change these reference links to use the controller and view method. *@
-        <li><a href="lucid.html">Home</a></li>
-        <li><a href="booking.html">Booking</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="partners.html">Partners</a></li>
+        <li><img style="max-height:100px; max-width: 100px; padding-top: 10px;" src="~/Content/Images/Lucid Hotels Logo.ico"></li>
+        <li>@Html.ActionLink("Home", "Search", "Booking")</li>
+        <li>@Html.ActionLink("Booking", "Create", "Booking")</li>
+        <li>@Html.ActionLink("About", "About", "Home")</li>
+        <li>@Html.ActionLink("Partners", "Partners", "Home")</li>
     </ul>
 
-    <br>
     <hr>
-    <br>
 
     <div>
         @RenderBody()
@@ -31,9 +30,11 @@
             <p>
                 <b>
                     Lucid Hotels
-                    <br>Contact us at +1 (907)-123-4567
+                    <br>Call us at +1 (907)-123-4567
+                    <br>Email us at CustomerSupport@LucidHotels.com
+                    <br>Copyright &copy; @DateTime.Now.Year Lucid Hotels®
                 </b>
-                <br>Copyright &copy; @DateTime.Now.Year Lucid Hotels®</br>
+                
             </p>
         </footer>
     </div>

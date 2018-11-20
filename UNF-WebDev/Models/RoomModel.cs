@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
@@ -12,17 +13,27 @@ namespace UNF_WebDev.Models
     {
         [Key]
         public int roomId { get; set; }
+        public string bookingStatus { get; set; }
         public string hotelName { get; set; }
         public string city { get; set; }
         public string state { get; set; }
         public int zipCode { get; set; }
-        public int roomSquareFootage { get; set; }
         public int peoplePerRoom { get; set; }
         public double pricePerNight { get; set; }
+        [Column(TypeName = "datetime2")]
         public DateTime checkIn { get; set; }
+        [Column(TypeName = "datetime2")]
         public DateTime checkOut { get; set; }
 
 
+        public RoomModel()
+        {
+            bookingStatus = "OPEN";
+        }
+        public enum BookingStatusDropDown
+        {
+            OPEN, RESERVE
+        }
 
 
         public enum UnitedStatesDropDown

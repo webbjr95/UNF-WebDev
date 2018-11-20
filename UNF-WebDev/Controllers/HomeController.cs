@@ -26,5 +26,11 @@ namespace UNF_WebDev.Controllers
 
             return View();
         }
+        public ActionResult Partners()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
     }
 }

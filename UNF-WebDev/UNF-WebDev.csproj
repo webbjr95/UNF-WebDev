@@ -206,11 +206,23 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Images\About\James Webb.png" />
+    <Content Include="Content\Images\About\Michael Parks.png" />
+    <Content Include="Content\Images\About\Zach Tomburrino.png" />
     <Content Include="Content\Images\background.jpg" />
+    <Content Include="Content\Images\filter ASC.png" />
+    <Content Include="Content\Images\filter DESC.png" />
+    <Content Include="Content\Images\Lucid Hotels Logo.ico" />
+    <Content Include="Content\Images\Partners\AIR_AmericanAirlines.jpg" />
+    <Content Include="Content\Images\Partners\AIR_Delta.jpg" />
+    <Content Include="Content\Images\Partners\AIR_JetBlue.jpg" />
+    <Content Include="Content\Images\Partners\CAR_Avis.jpg" />
+    <Content Include="Content\Images\Partners\CAR_Enterprise.jpg" />
+    <Content Include="Content\Images\Partners\CAR_Hertz.jpg" />
     <Content Include="Content\main.css" />
-    <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="favicon.ico" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -265,7 +277,7 @@
     <Content Include="Views\Booking\Delete.cshtml" />
     <Content Include="Views\Booking\Details.cshtml" />
     <Content Include="Views\Booking\Edit.cshtml" />
-    <Content Include="Views\Booking\Index.cshtml" />
+    <Content Include="Views\Booking\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

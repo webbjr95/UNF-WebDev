@@ -3,14 +3,13 @@
 @{
     ViewBag.Title = "Create";
 }
-<link href="@Url.Content("~/Content/main.css")" rel="stylesheet" type="text/css" />
 
 <body>
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
 
-    <p>Search for your dream get-a-way</p>
+    <p>ADMIN VIEW - Create a Reservation or Hotel Room for Customer</p>
     
     <div>
         <hr />
@@ -18,7 +17,7 @@
         <div>
             @Html.Label("Hotel Name: ", htmlAttributes: new { @class = "control-label col-md-2" })
             <div>
-                @Html.EditorFor(model => model.hotelName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.hotelName, new { htmlAttributes = new { @class = "input[type=text]" } })
                 @Html.ValidationMessageFor(model => model.hotelName, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -26,7 +25,7 @@
         <div>
             @Html.Label("City: ", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.city, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.city, new { htmlAttributes = new { @class = "input[type=text]" } })
                 @Html.ValidationMessageFor(model => model.city, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -43,23 +42,17 @@
         <div>
             @Html.Label("Zip Code: ", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.zipCode, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.zipCode, new { htmlAttributes = new { @class = "input[type=number]" } })
                 @Html.ValidationMessageFor(model => model.zipCode, "", new { @class = "text-danger" })
             </div>
         </div>
 
-        <div>
-            @Html.Label("Square Footage: ", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.roomSquareFootage, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.roomSquareFootage, "", new { @class = "text-danger" })
-            </div>
         </div>
 
         <div>
             @Html.Label("People Per Room: ", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.peoplePerRoom, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.peoplePerRoom, new { htmlAttributes = new { @class = "input[type=number]" } })
                 @Html.ValidationMessageFor(model => model.peoplePerRoom, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -67,7 +60,7 @@
         <div>
             @Html.Label("Price Per Night: ", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.pricePerNight, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.pricePerNight, new { htmlAttributes = new { @class = "input[type=number]" } })
                 @Html.ValidationMessageFor(model => model.pricePerNight, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -75,7 +68,7 @@
         <div>
             @Html.Label("Check In Date: ", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.checkIn, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.TextBoxFor(model => model.checkIn, new { type = "date" })
                 @Html.ValidationMessageFor(model => model.checkIn, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -83,7 +76,7 @@
         <div>
             @Html.Label("Check Out Date: ", htmlAttributes: new { @class = "control-label col-md-2" })
             <div>
-                <input type="date" name="name" value=@DateTime.Now />
+                @Html.TextBoxFor(model => model.checkOut, new { type = "date" })
                 @Html.ValidationMessageFor(model => model.checkOut, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -93,7 +86,6 @@
                 <input type="submit" value="Create" class="btn btn-default" />
             </div>
         </div>
-    </div>
 }
     </body>
 

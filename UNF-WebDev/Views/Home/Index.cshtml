@@ -5,34 +5,105 @@
     <title>
         Lucid Hotels
     </title>
-    @* TODO: Maybe change aroudn the links or remove Bootstrap as it is causing some issues. *@
-    <link href="@Url.Content("~/Content/main.css")" rel="stylesheet" type="text/css" />
 
 </head>
 
 
 <div class="transparent"></div>
-<h1>Lucid Hotels</h1>
 <body>
 
-    <p class="blocktext"> <b>Welcome to Lucid Hotels, where simplicity is the epitome of complexity.
-        <br> We strive to offer high quality service without the confusion.</b>
+    <p class="blocktext">
+        <b>Welcome to Lucid Hotels, where simplicity is the epitome of complexity. We strive to offer high quality service without the confusion.</b>
     </p>
     <div>
         <h2><a href="booking.html">Booking</a></h2>
     </div>
 
 
-    <footer>
-        <div class="paragraph">
-            <p class="footer">
-                <b>
-                    Lucid Hotels
-                    <br>Contact us at +1 (907)-123-4567
-                </b>
-            </p>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <p>Search for your dream get-a-way</p>
+
+        <div>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div>
+                @Html.Label("Hotel Name: ", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div>
+                    @Html.EditorFor(model => model.hotelName, new { htmlAttributes = new { @class = "input[type=text]" } })
+                    @Html.ValidationMessageFor(model => model.hotelName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div>
+                @Html.Label("City: ", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.city, new { htmlAttributes = new { @class = "input[type=text]" } })
+                    @Html.ValidationMessageFor(model => model.city, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div>
+                @Html.Label("State: ", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(model => model.state,
+                                                       new SelectList(Enum.GetNames(typeof(UNF_WebDev.Models.RoomModel.UnitedStatesDropDown))))
+                    @Html.ValidationMessageFor(model => model.state, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div>
+                @Html.Label("Zip Code: ", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.zipCode, new { htmlAttributes = new { @class = "input[type=number]" } })
+                    @Html.ValidationMessageFor(model => model.zipCode, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
         </div>
-    </footer>
+
+        <div>
+            @Html.Label("People Per Room: ", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.peoplePerRoom, new { htmlAttributes = new { @class = "input[type=number]" } })
+                @Html.ValidationMessageFor(model => model.peoplePerRoom, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div>
+            @Html.Label("Price Per Night: ", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.pricePerNight, new { htmlAttributes = new { @class = "input[type=number]" } })
+                @Html.ValidationMessageFor(model => model.pricePerNight, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div>
+            @Html.Label("Check In Date: ", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.checkIn, new { type = "date" })
+                @Html.ValidationMessageFor(model => model.checkIn, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div>
+            @Html.Label("Check Out Date: ", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div>
+                @Html.TextBoxFor(model => model.checkOut, new { type = "date" })
+                @Html.ValidationMessageFor(model => model.checkOut, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div>
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    }
+
 
 </body>
 </html>
