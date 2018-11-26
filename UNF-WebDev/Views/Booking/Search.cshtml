@@ -3,14 +3,20 @@
 @{
     ViewBag.Title = "Search";
 }
-<p class="blocktext">
+<h1 style="width: 80%;">
     <b>Welcome to Lucid Hotels, where simplicity is the epitome of complexity. We strive to offer high quality service without the confusion.</b>
-</p>
+</h1>
 
-    <h1>
+    
+<form style="width: 80%;">
+
+    <h1 style="width: auto">
         Rooms Available to Make Your Dream Come True
     </h1>
-    <table style="width:80%; margin-left: auto; margin-right: auto;">
+
+    <hr>
+
+    <table style="margin-left: auto; margin-right: auto;">
         <tr>
             <th>
                 Hotel |
@@ -67,7 +73,7 @@
 
         @foreach (var item in Model)
         {
-            <tr>
+            <tr style="margin-left: auto; margin-right: auto; text-align: center;">
                 <td>
                     @Html.DisplayFor(modelItem => item.hotelName)
                 </td>
@@ -87,10 +93,12 @@
                     $ @Html.DisplayFor(modelItem => item.pricePerNight)
                 </td>
                 <td>
-                    @Html.ActionLink("Book", "Edit", new { id = item.roomId }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.roomId })
+                    @Html.ActionLink("[ Book ]", "Edit", new { id = item.roomId })
+                    @Html.ActionLink("[ Details ]", "Details", new { id = item.roomId })
                 </td>
             </tr>
         }
 
     </table>
+
+</form>

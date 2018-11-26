@@ -147,11 +147,20 @@ th a {
     text-decoration: none;
 }
 
+th a:hover {
+    background-color: #111;
+}
+
+
 td a {
     color: #c1dec1;
     font-size: 25px;
     font-family: 'Segoe UI';
     text-decoration: none;
+}
+
+td a:hover {
+    background-color: #111;
 }
 
 input[type=text] {
@@ -171,6 +180,20 @@ input[type=date] {
     margin: 8px 0;
     box-sizing: border-box;
     text-align: center;
+    width:213px;
+    height: 43px;
+}
+select {
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    text-align: center;
+    width: 213px;
+    height: 43px;
+}
+input[type=button], input[type=submit] {
+    width: 140px;
+    height: 35px;
 }
 
 

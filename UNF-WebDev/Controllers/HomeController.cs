@@ -32,5 +32,33 @@ namespace UNF_WebDev.Controllers
 
             return View();
         }
+
+        public ActionResult Specials(string partnerSpecial)
+        {
+            string returnView = "specials";
+            switch (partnerSpecial)
+            {
+                case "avis":
+                    returnView = "Specials-Avis";
+                    break;
+                case "hertz":
+                    returnView = "Specials-Hertz";
+                    break;
+                case "enterprise":
+                    returnView = "Specials-Enterprise";
+                    break;
+                case "americanAirlines":
+                    returnView = "Specials-AmericanAirlines";
+                    break;
+                case "jetblue":
+                    returnView = "Specials-JetBlue";
+                    break;
+                case "delta":
+                    returnView = "Specials-Delta";
+                    break;
+            }
+
+            return View(returnView);
+        }
     }
 }

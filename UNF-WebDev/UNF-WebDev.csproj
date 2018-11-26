@@ -278,6 +278,13 @@
     <Content Include="Views\Booking\Details.cshtml" />
     <Content Include="Views\Booking\Edit.cshtml" />
     <Content Include="Views\Booking\Search.cshtml" />
+    <Content Include="Views\Home\Specials-Avis.cshtml" />
+    <Content Include="Views\Home\Specials.cshtml" />
+    <Content Include="Views\Home\Specials-Hertz.cshtml" />
+    <Content Include="Views\Home\Specials-Enterprise.cshtml" />
+    <Content Include="Views\Home\Specials-Delta.cshtml" />
+    <Content Include="Views\Home\Specials-JetBlue.cshtml" />
+    <Content Include="Views\Home\Specials-AmericanAirlines.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
