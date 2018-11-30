@@ -77,6 +77,7 @@ p
     font-size: 20px;
     
 }
+
 body {
     background-image: url(/Content/Images/background.jpg);
     background-repeat: repeat;
@@ -183,6 +184,14 @@ input[type=date] {
     width:213px;
     height: 43px;
 }
+input[type=password] {
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    text-align: center;
+    width: 213px;
+    height: 43px;
+}
 select {
     padding: 12px 20px;
     margin: 8px 0;
@@ -194,6 +203,10 @@ select {
 input[type=button], input[type=submit] {
     width: 140px;
     height: 35px;
+}
+
+.hide-form{
+    display:none;
 }
 
 

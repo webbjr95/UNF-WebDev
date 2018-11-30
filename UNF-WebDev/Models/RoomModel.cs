@@ -24,6 +24,9 @@ namespace UNF_WebDev.Models
         public DateTime checkIn { get; set; }
         [Column(TypeName = "datetime2")]
         public DateTime checkOut { get; set; }
+        public string hotelDescription { get; set; }
+
+        public virtual CustomerModel bookedBy { get; set; }
 
 
         public RoomModel()
@@ -38,92 +41,87 @@ namespace UNF_WebDev.Models
 
         public enum UnitedStatesDropDown
         {
-            Alabama,
-            Alaska,
-            Arizona,
-            Arkansas,
-            California,
-            Colorado,
-            Connecticut,
-            Delaware,
-            [DefaultValue("District of Columbia")]
-            District_of_Columbia,
-            Florida,
-            Georgia,
-            Hawaii,
-            Idaho,
-            Illinois,
-            Indiana,
-            Iowa,
-            Kansas,
-            Kentucky,
-            Louisiana,
-            Maine,
-            Maryland,
-            Massachusetts,
-            Michigan,
-            Minnesota,
-            Mississippi,
-            Missouri,
-            Montana,
-            Nebraska,
-            Nevada,
-            [Display(Name = "New Hampshire")]
-            New_Hampshire,
-            [Display(Name = "New Jersey")]
-            New_Jersey,
-            [Display(Name = "New Mexico")]
-            New_Mexico,
-            [Display(Name = "New York")]
-            New_York,
-            [Display(Name = "North Carolina")]
-            North_Carolina,
-            [Display(Name = "North Dakota")]
-            North_Dakota,
-            Ohio,
-            Oklahoma,
-            Oregon,
-            Pennsylvania,
-            [Display(Name = "Rhode Island")]
-            Rhode_Island,
-            [Display(Name = "South Carolina")]
-            South_Carolina,
-            [Display(Name = "South Dakota")]
-            South_Dakota,
-            Tennessee,
-            Texas,
-            Utah,
-            Vermont,
-            Virginia,
-            Washington,
-            [Display(Name = "West Virginia")]
-            West_Virginia,
-            Wisconsin,
-            Wyoming,
+            AL,
+            AK,
+            AZ,
+            AR,
+            CA,
+            CO,
+            CT,
+            DE,
+            FL,
+            GA,
+            HI,
+            ID,
+            IL,
+            IN,
+            IA,
+            KS,
+            KY,
+            LA,
+            ME,
+            MD,
+            MA,
+            MI,
+            MN,
+            MS,
+            MO,
+            MT,
+            NE,
+            NV,
+            NH,
+            NJ,
+            NM,
+            NY,
+            NC,
+            ND,
+            OH,
+            OK,
+            OR,
+            PA,
+            RI,
+            SC,
+            SD,
+            TN,
+            TX,
+            UT,
+            VT,
+            VA,
+            WA,
+            WV,
+            WI,
+            WY,
         }//End of the enum for the United Stest of America
 
-        List<string> currentStateList = new List<string>(Enum.GetNames(typeof(UnitedStatesDropDown)));
-
-        public void UpdatedStateList()
-        {
-            foreach (string state in currentStateList)
-            {
-                if (state.Contains("_"))
-                {
-                    state.Replace("_", " ");
-                }
-            }
-        }
-
     }//End of the Room Model class
+    public class CustomerModel
+    {
+        [ForeignKey("RoomModel")]
+        [Key]
+        public int roomId { get; set; }
+        public int customerId { get; set; }
 
-    
+        [Required]
+        [EmailAddress]
+        [Display(Name = "Email")]
+        public string Email { get; set; }
+        public string firstName { get; set; }
+        public string lastName { get; set; }
+        public DateTime checkIn { get; set; }
+        [Column(TypeName = "datetime2")]
+        public DateTime checkOut { get; set; }
+
+
+        public virtual RoomModel RoomModel { get; set; }
+    }
+
 
     public class RoomModelDb : ApplicationDbContext
     {
         //Create the tables for the DB
         public DbSet<RoomModel> Room { get; set; }
         public DbSet<CustomerModel> Customer { get; set; }
+
     }
 }
 

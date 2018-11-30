@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -15,6 +16,7 @@ namespace UNF_WebDev.Controllers
     public class BookingController : Controller
     {
         private RoomModelDb db = new RoomModelDb();
+        
 
         // GET: Rooms/Details/5
         public ActionResult Details(int? id)
@@ -31,6 +33,7 @@ namespace UNF_WebDev.Controllers
             return View(roomModel);
         }
 
+        [Authorize(Roles = "ADMIN")]
         // GET: Rooms/Create
         public ActionResult Create()
         {
@@ -85,6 +88,7 @@ namespace UNF_WebDev.Controllers
             return View(roomModel);
         }
 
+        [Authorize(Roles = "ADMIN")]
         // GET: Rooms/Delete/5
         public ActionResult Delete(int? id)
         {
@@ -110,6 +114,7 @@ namespace UNF_WebDev.Controllers
             db.SaveChanges();
             return RedirectToAction("Search");
         }
+
 
         public ActionResult Search(string sortOrder)
         {
