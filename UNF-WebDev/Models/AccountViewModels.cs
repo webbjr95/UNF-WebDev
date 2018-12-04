@@ -125,6 +125,6 @@ namespace UNF_WebDev.Models
 
     public enum CustomUserRoles
     {
-        ADMIN, STANDARD
+        admin, standard
     }
 }

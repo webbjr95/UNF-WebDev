@@ -10,18 +10,29 @@
 
 </head>
 <body>
+    @if (Request.IsAuthenticated && @User.IsInRole("ADMIN"))
+    {
+        <ul>
+            <li><img style="max-height:100px; max-width: 100px; padding-top: 10px;" src="~/Content/Images/Lucid Hotels Logo.ico"></li>
+            <li>@Html.ActionLink("[ Home ]", "Search", "Booking")</li>
+            <li>@Html.ActionLink("[ Book Now ]", "Create", "Booking")</li>
+            <li>@Html.ActionLink("[ About ]", "About", "Home")</li>
+            <li>@Html.ActionLink("[ Partners ]", "Partners", "Home")</li>
+            @Html.Partial("_LoginPartial")
 
-    <ul>
-        @* TODO: Change these reference links to use the controller and view method. *@
-        <li><img style="max-height:100px; max-width: 100px; padding-top: 10px;" src="~/Content/Images/Lucid Hotels Logo.ico"></li>
-        <li>@Html.ActionLink("[ Home ]", "Search", "Booking")</li>
-        <li>@Html.ActionLink("[ Book Now ]", "Create", "Booking")</li>
-        <li>@Html.ActionLink("[ About ]", "About", "Home")</li>
-        <li>@Html.ActionLink("[ Partners ]", "Partners", "Home")</li>
-        @Html.Partial("_LoginPartial")
+        </ul>
+    }
+    else
+    {
+        <ul>
+            <li><img style="max-height:100px; max-width: 100px; padding-top: 10px;" src="~/Content/Images/Lucid Hotels Logo.ico"></li>
+            <li>@Html.ActionLink("[ Home ]", "Search", "Booking")</li>
+            <li>@Html.ActionLink("[ About ]", "About", "Home")</li>
+            <li>@Html.ActionLink("[ Partners ]", "Partners", "Home")</li>
+            @Html.Partial("_LoginPartial")
 
-    </ul>
-    
+        </ul>
+    }
     <hr>
 
     <div>

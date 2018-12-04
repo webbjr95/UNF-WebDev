@@ -11,8 +11,6 @@ using UNF_WebDev.Models;
 
 namespace UNF_WebDev.Controllers
 {
-    //TODO: Add in the option for filtering like I did the helpdesk program.
-    //Maybe look into building out the form for submissions.
     public class BookingController : Controller
     {
         private RoomModelDb db = new RoomModelDb();

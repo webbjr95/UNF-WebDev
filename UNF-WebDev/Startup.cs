@@ -51,7 +51,7 @@ namespace UNF_WebDev
                 //Add default User to Role Admin   
                 if (chkUser.Succeeded)
                 {
-                    var result = UserManager.AddToRole(superAdmin.Id, "Admin");
+                    var result = UserManager.AddToRole(superAdmin.Id, "admin");
 
                 }
             }

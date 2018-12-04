@@ -5,13 +5,7 @@
     {
         @Html.AntiForgeryToken()
 
-        @*
-            @User.IsInRole("ADMIN")
-            
-            Add in the function for the different pages based off the role they are apart of.
-        *@
-
-        <li><a href="">Welcome @User.Identity.Name!</a></li>
+        <li><a href="">@User.Identity.Name</a></li>
         <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
 
     }
